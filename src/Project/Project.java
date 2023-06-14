@@ -13,6 +13,8 @@ public class  Project extends BaseStaticDriver {
     @Test
     void demoTestingProject() {
 
+        //scenario1
+
         WebElement login =driver.findElement(By.cssSelector("a[class='ico-login']"));
         login.click();
 
@@ -49,6 +51,7 @@ public class  Project extends BaseStaticDriver {
     @Test
     void demoTestingProject2(){
 
+        //scenario2
         WebElement login =driver.findElement(By.cssSelector("a[class='ico-login']"));
         login.click();
 
@@ -70,6 +73,7 @@ public class  Project extends BaseStaticDriver {
     @Test
     void demoTestingProject3(){
 
+        //scenario3
         WebElement Laptop=driver.findElement(By.linkText("14.1-inch Laptop"));
         Laptop.click();
 
@@ -94,6 +98,20 @@ public class  Project extends BaseStaticDriver {
         SelectCity.click();
         Select selectCity=new Select(SelectCity);
         selectCity.selectByValue("40");
+
+        WebElement City=driver.findElement(By.id("BillingNewAddress_City"));
+        City.sendKeys("NewYork");
+
+        WebElement Adress1=driver.findElement(By.id("BillingNewAddress_Address1"));
+        Adress1.sendKeys("Manhattan");
+
+        WebElement PostalCode= driver.findElement(By.id("BillingNewAddress_ZipPostalCode"));
+        PostalCode.sendKeys("22255");
+
+        WebElement PhoneNumber=driver.findElement(By.id("BillingNewAddress_PhoneNumber"));
+        PhoneNumber.sendKeys("123456789987");
+
+
 
 
 
