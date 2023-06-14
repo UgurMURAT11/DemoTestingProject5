@@ -52,10 +52,10 @@ public class GenelWebDriver {
     void LoginTest() {
 
         WebElement inputEmail = driver.findElement(By.id("input-email"));
-        inputEmail.sendKeys("ugur.murat.08.34@gmail.com");
+        inputEmail.sendKeys("asdqwe123@gmail.com");
 
         WebElement inputPassword = driver.findElement(By.id("input-password"));
-        inputPassword.sendKeys("Asdqwe123");
+        inputPassword.sendKeys("asdqwe123");
 
         WebElement loginbtn = driver.findElement(By.cssSelector("input[value='Login']"));
         loginbtn.click();
