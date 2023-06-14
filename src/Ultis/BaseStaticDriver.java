@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class GenelWebDriver {
+public class BaseStaticDriver {
     public static WebDriver driver;
 
     public static WebDriverWait wait;
@@ -44,23 +44,23 @@ public class GenelWebDriver {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); //sadece ana sayfa yüklenirken gecikme yapıyor ki hata olmasın
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // bütün webElemenler yüklenirken gecikme yapıyor ki hata olmasın
 
-        driver.get("https://opencart.abstracta.us/index.php?route=account/login");
-        LoginTest();
+        driver.get("http://demowebshop.tricentis.com/");
+     //   LoginTest();
 
     }
-
+/*
     void LoginTest() {
 
         WebElement inputEmail = driver.findElement(By.id("input-email"));
-        inputEmail.sendKeys("asdqwe123@gmail.com");
+        inputEmail.sendKeys("ugur.murat.08.34@gmail.com");
 
         WebElement inputPassword = driver.findElement(By.id("input-password"));
-        inputPassword.sendKeys("asdqwe123");
+        inputPassword.sendKeys("Asdqwe123");
 
         WebElement loginbtn = driver.findElement(By.cssSelector("input[value='Login']"));
         loginbtn.click();
     }
-
+*/
     @AfterClass
     public void BitisIslemleri() {
         System.out.println("Driver stop ....");
