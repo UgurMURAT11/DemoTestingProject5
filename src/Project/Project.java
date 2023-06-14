@@ -3,6 +3,8 @@ package Project;
 import Ultis.BaseStaticDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -67,6 +69,35 @@ public class  Project extends BaseStaticDriver {
 
     @Test
     void demoTestingProject3(){
+
+        WebElement Laptop=driver.findElement(By.linkText("14.1-inch Laptop"));
+        Laptop.click();
+
+        WebElement addToCart=driver.findElement(By.id("add-to-cart-button-31"));
+        addToCart.click();
+
+        WebElement ShoppingCart=driver.findElement(By.linkText("shopping cart"));
+        ShoppingCart.click();
+
+        WebElement click=driver.findElement(By.id("termsofservice"));
+        click.click();
+
+        WebElement Checkout=driver.findElement(By.id("checkout"));
+        Checkout.click();
+
+        WebElement SelectCountry=driver.findElement(By.id("BillingNewAddress_CountryId"));
+        SelectCountry.click();
+        Select selectCountry=new Select(SelectCountry);
+        selectCountry.selectByValue("1");
+
+        WebElement SelectCity=driver.findElement(By.id("BillingNewAddress_StateProvinceId"));
+        SelectCity.click();
+        Select selectCity=new Select(SelectCity);
+        selectCity.selectByValue("40");
+
+
+
+
 
 
 

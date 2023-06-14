@@ -76,5 +76,4 @@ public class BaseStaticDriver {
         driver.quit();
     }
 
-
 }
