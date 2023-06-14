@@ -3,12 +3,13 @@ package Project;
 import Ultis.BaseStaticDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class  Project extends BaseStaticDriver {
 
     @Test
-    public void demoTestingProject() {
+    void demoTestingProject() {
 
         WebElement login =driver.findElement(By.cssSelector("a[class='ico-login']"));
         login.click();
@@ -44,10 +45,38 @@ public class  Project extends BaseStaticDriver {
     }
 
     @Test
-    public void demoTestingProject2(){
+    void demoTestingProject2(){
+
+        WebElement login =driver.findElement(By.cssSelector("a[class='ico-login']"));
+        login.click();
+
+        WebElement Email=driver.findElement(By.id("Email"));
+        Email.sendKeys("asdasdasdqweqwe123121232132454673@gmail.com");
+
+        WebElement Password=driver.findElement(By.id("Password"));
+        Password.sendKeys("asdqwe123");
+
+        WebElement Login=driver.findElement(By.cssSelector("input[class='button-1 login-button']"));
+        Login.click();
+
+        WebElement errorMessage=driver.findElement(By.cssSelector("div[class='validation-summary-errors']"));
+
+        Assert.assertTrue(errorMessage.getText().contains("unsuccessfu"));
+
+    }
+
+    @Test
+    void demoTestingProject3(){
+
+
+
+
 
 
 
 
     }
+
+
+
 }

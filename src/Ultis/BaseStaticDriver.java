@@ -45,22 +45,25 @@ public class BaseStaticDriver {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // bütün webElemenler yüklenirken gecikme yapıyor ki hata olmasın
 
         driver.get("http://demowebshop.tricentis.com/");
-     //   LoginTest();
+        LoginTest();
 
     }
-/*
+
     void LoginTest() {
 
-        WebElement inputEmail = driver.findElement(By.id("input-email"));
-        inputEmail.sendKeys("ugur.murat.08.34@gmail.com");
+        WebElement login =driver.findElement(By.cssSelector("a[class='ico-login']"));
+        login.click();
 
-        WebElement inputPassword = driver.findElement(By.id("input-password"));
-        inputPassword.sendKeys("Asdqwe123");
+        WebElement Email=driver.findElement(By.id("Email"));
+        Email.sendKeys("asdasdasdqweqwe123123@gmail.com");
 
-        WebElement loginbtn = driver.findElement(By.cssSelector("input[value='Login']"));
-        loginbtn.click();
+        WebElement Password=driver.findElement(By.id("Password"));
+        Password.sendKeys("asdqwe123");
+
+        WebElement Login=driver.findElement(By.cssSelector("input[class='button-1 login-button']"));
+        Login.click();
     }
-*/
+
     @AfterClass
     public void BitisIslemleri() {
         System.out.println("Driver stop ....");
