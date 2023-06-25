@@ -113,8 +113,13 @@ public class  Project extends BaseStaticDriver {
         WebElement Confirm=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[class='button-1 confirm-order-next-step-button']")));
         Confirm.click();
 
+        WebElement mesaj= wait.until(ExpectedConditions.
+                visibilityOfElementLocated(By.xpath("//*[text()='Your order has been successfully processed!']")));
 
+        Assert.assertTrue(mesaj.isDisplayed());
 
+        WebElement Continue5=driver.findElement(By.cssSelector("input[class='button-2 order-completed-continue-button']"));
+        Continue5.click();
 
 
 
