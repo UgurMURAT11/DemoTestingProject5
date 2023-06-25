@@ -89,27 +89,34 @@ public class  Project extends BaseStaticDriver {
         WebElement Checkout=driver.findElement(By.id("checkout"));
         Checkout.click();
 
-        WebElement SelectCountry=driver.findElement(By.id("BillingNewAddress_CountryId"));
+        Bekle(1);
+
+        WebElement SelectCountry=driver.findElement(By.cssSelector("input[class='button-1 new-address-next-step-button']"));
         SelectCountry.click();
-        Select selectCountry=new Select(SelectCountry);
-        selectCountry.selectByValue("1");
 
-        WebElement SelectCity=driver.findElement(By.id("BillingNewAddress_StateProvinceId"));
-        SelectCity.click();
-        Select selectCity=new Select(SelectCity);
-        selectCity.selectByValue("40");
 
-        WebElement City=driver.findElement(By.id("BillingNewAddress_City"));
-        City.sendKeys("NewYork");
+        WebElement Continue1= wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[onclick='Shipping.save()']")));
+        Continue1.click();
 
-        WebElement Adress1=driver.findElement(By.id("BillingNewAddress_Address1"));
-        Adress1.sendKeys("Manhattan");
+        WebElement Continue2=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[class='button-1 shipping-method-next-step-button']")));
+        Continue2.click();
 
-        WebElement PostalCode= driver.findElement(By.id("BillingNewAddress_ZipPostalCode"));
-        PostalCode.sendKeys("22255");
+        WebElement Payment3=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[value='Payments.PurchaseOrder']")));
+        Payment3.click();
 
-        WebElement PhoneNumber=driver.findElement(By.id("BillingNewAddress_PhoneNumber"));
-        PhoneNumber.sendKeys("123456789987");
+        WebElement Continue3=driver.findElement(By.cssSelector("input[class='button-1 payment-method-next-step-button']"));
+        Continue3.click();
+
+        WebElement Continue4=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[class='button-1 payment-info-next-step-button']")));
+        Continue4.click();
+
+        WebElement Confirm=wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[class='button-1 confirm-order-next-step-button']")));
+        Confirm.click();
+
+
+
+
+
 
 
 
